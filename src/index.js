@@ -4,6 +4,9 @@ import { BrowserRouter } from "react-router-dom";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
+//importing amplify configuration
+import Amplify from "aws-amplify";
+import awsmobile from "./aws-exports.js";
 
 ReactDOM.render(
     <BrowserRouter>

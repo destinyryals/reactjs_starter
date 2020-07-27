@@ -1,0 +1,39 @@
+{
+    "paths": [
+        {
+            "name": "/user/record",
+            "lambdaFunction": "userfunc",
+            "privacy": {
+                "private": true,
+                "auth": [
+                    "/GET",
+                    "/PUT",
+                    "/PATCH"
+                ]
+            }
+        }
+    ],
+    "resourceName": "apie20fbc10",
+    "apiName": "apie20fbc10",
+    "functionArns": [
+        {
+            "lambdaFunction": "userfunc"
+        }
+    ],
+    "privacy": {
+        "auth": 1,
+        "unauth": 0,
+        "authRoleName": "amplify-rpsreact-rpsdev-165005-authRole",
+        "unAuthRoleName": "amplify-rpsreact-rpsdev-165005-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "userfunc",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}

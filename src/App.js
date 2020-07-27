@@ -1,4 +1,7 @@
 import React from 'react';
+import Amplify, {Auth} from "aws-amplify";
+import {withAuthenticator} from "aws-amplify-react"
+
 import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 
 import Row from 'react-bootstrap/Row';
@@ -18,6 +21,7 @@ import ForgotPassword from "./components/ForgotPasswordContainer/ForgotPassword.
 import EnglishInstructions from './components/InstructionContainer/EnglishInstructions.js';
 import SpanishInstructions from './components/InstructionContainer/SpanishInstructions.js';
 import SimpleBottomNavigation from './components/TabBarContainer/TabBar.js';
+import MyAmplifyTheme from './MyAmplifyTheme';
 
 
 
@@ -36,8 +40,8 @@ function App() {
               <Row>
                 <Switch>
                   <Route exact path='/' component={WelcomeScreen} />
-                  <Route path="/sign-in" component={Login} />
-                  <Route path="/sign-up" component={SignUp} />
+                  {/* <Route path="/sign-in" component={Login} /> */}
+                  {/* <Route path="/sign-up" component={SignUp} /> */}
                   <Route path="/userhome" component={UserHome} />
                   <Route path="/game" component={Game} />
                   <Route path="/forgotpw" component={ForgotPassword} />
@@ -54,7 +58,9 @@ function App() {
   );
 }
 
-export default App;
+export default withAuthenticator (App, {
+    theme: MyAmplifyTheme
+});
 
 
 
